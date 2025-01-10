@@ -1,3 +1,42 @@
 body {
   font-family: Courier, monospace;
+
+  background-color: #f0f0f0;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #333;
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  /* color: #666; */
+  font-size: 1.4rem;
+}
+
+a {
+  color: #000;
+}
+
+.body-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#interests {
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 }
