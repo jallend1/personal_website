@@ -18,11 +18,18 @@ sectionElements.forEach((el) => {
     el.addEventListener("mouseover", () => {
         console.log(`Hovered over ${el.id}`);
         el.classList.add("active-element");
+        // Logs the el HTML tag
+        const elementName = document.querySelector("#element-name");
+        if (elementName)
+            elementName.textContent = el.tagName;
         console.log(`Height: ${el.clientHeight}`);
         console.log(`Width: ${el.clientWidth}`);
     });
     el.addEventListener("mouseout", () => {
         console.log(`Mouse out of ${el.id}`);
         el.classList.remove("active-element");
+        const elementName = document.querySelector("#element-name");
+        if (elementName)
+            elementName.textContent = "";
     });
 });
