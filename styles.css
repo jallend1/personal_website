@@ -41,7 +41,7 @@ a {
   gap: 1rem;
 
   img {
-    height: 100px;
+    height: 50px;
   }
 }
 
@@ -49,5 +49,18 @@ a {
   ul {
     list-style-type: none;
     padding: 0;
+  }
+}
+
+#contact-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
