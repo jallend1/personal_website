@@ -1,32 +1,14 @@
 "use strict";
-const readyToGo = true;
-console.log(readyToGo);
-const el = document.getElementById("about");
-if (el) {
-    console.log(el);
-}
-else {
-    console.error("Element with id 'about' not found.");
-}
-const sectionElements = document.querySelectorAll("section");
-console.log(sectionElements);
-console.dir(sectionElements[0]);
-sectionElements.forEach((el) => {
-    el.addEventListener("click", () => {
-        console.log(`Clicked on ${el.id}`);
-    });
-    el.addEventListener("mouseover", () => {
-        console.log(`Hovered over ${el.id}`);
+const elements = document.querySelectorAll("section, img, a, p, h1, h2, h3, h4, code, aside, div, span, ul, li, hr, footer, header");
+elements.forEach((el) => {
+    el.addEventListener("mouseover", (e) => {
+        e.stopPropagation();
         el.classList.add("active-element");
-        // Logs the el HTML tag
         const elementName = document.querySelector("#element-name");
         if (elementName)
             elementName.textContent = el.tagName;
-        console.log(`Height: ${el.clientHeight}`);
-        console.log(`Width: ${el.clientWidth}`);
     });
     el.addEventListener("mouseout", () => {
-        console.log(`Mouse out of ${el.id}`);
         el.classList.remove("active-element");
         const elementName = document.querySelector("#element-name");
         if (elementName)
