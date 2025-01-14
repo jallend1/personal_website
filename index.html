@@ -15,7 +15,9 @@
     </header>
     <div class="container">
       <aside class="left-column">
-        <h2>Element</h2>
+        <header>
+          <h2>Element</h2>
+        </header>
         <p>
           <code id="element-name"></code>
         </p>
@@ -30,9 +32,10 @@
           <li>
             <code>src</code>
           </li>
-            <li>
+          <li>
             <code>alt</code>
           </li>
+        </ul>
       </aside>
       <main class="center-column">
         <section id="about">
@@ -153,23 +156,29 @@
         </section>
       </main>
       <aside class="right-column">
-        <h3>Element Details</h3>
+        <header>
+          <h3>Element Details</h3>
+        </header>
         <div id="element-details">
           <div>
             <h4>Dimensions</h4>
-            <p id="element-dimensions"></p>
+            <ul id="element-dimensions"></ul>
           </div>
           <div>
             <h4>Parent Node</h4>
-            <p id="element-parent"></p>
+            <ul id="element-parent"></ul>
           </div>
           <div>
             <h4>Child Nodes</h4>
-            <p id="element-children"></p>
+            <ul id="element-children"></ul>
           </div>
           <div>
-            <h4>Sibling List</h4>
-            <p id="element-siblings"></p>
+            <h4>Siblings</h4>
+            <ul id="element-siblings"></ul>
+          </div>
+          <div>
+            <h4>Text Content Length</h4>
+            <p id="element-text"></p>
           </div>
         </div>
       </aside>

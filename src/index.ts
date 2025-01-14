@@ -21,9 +21,10 @@ elements.forEach((el: HTMLElement) => {
       for (let i = 0; i < el.attributes.length; i++) {
         const attr = el.attributes[i];
         const attrEl = document.createElement("li");
-        attrEl.textContent = `${attr.name}: ${attr.value}`;
+        attrEl.innerHTML = `<span class="attr-name">${attr.name}</span>: <span class="attr-value">${attr.value}</span>`;
         elementAttributes.appendChild(attrEl);
       }
+      console.log(el);
     }
     const elementDimensions: HTMLElement | null = document.querySelector(
       "#element-dimensions"
@@ -32,9 +33,15 @@ elements.forEach((el: HTMLElement) => {
       const { width, height } = el.getBoundingClientRect();
       elementDimensions.textContent = `width: ${width}px, height: ${height}px`;
     }
+    const elementText: HTMLElement | null =
+      document.querySelector("#element-text");
+    if (elementText)
+      elementText.textContent = el.textContent
+        ? el.textContent.length.toString()
+        : "0";
     const parentNode: HTMLElement | null =
       document.querySelector("#element-parent");
-    if (parentNode) parentNode.textContent = el.parentElement?.tagName;
+    if (parentNode) parentNode.textContent = el.parentElement?.tagName ?? "";
     const childNodes: HTMLElement | null =
       document.querySelector("#element-children");
     if (childNodes) {
