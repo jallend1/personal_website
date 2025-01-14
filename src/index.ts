@@ -1,10 +1,13 @@
 const elements: NodeListOf<HTMLElement> = document.querySelectorAll(
-  "section, img, a, p, h1, h2, h3, h4, code, aside, div, span, ul, li, hr, footer, header"
+  "section, img, a, p, h1, h2, h3, h4, code, div, span, ul, li, hr, footer, header"
 );
 
 elements.forEach((el: HTMLElement) => {
   el.addEventListener("mouseover", (e) => {
     e.stopPropagation();
+    // Don't highlight elements inside the asides or the container element
+    if (el.closest("aside") || el.classList.contains("container")) return;
+
     el.classList.add("active-element");
     // TODO: Refactor to use a single function to populate all elements
     const elementName: HTMLElement | null =
