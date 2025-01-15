@@ -2,7 +2,7 @@
 const elements = document.querySelectorAll("section, img, a, p, h1, h2, h3, h4, code, div, span, ul, li, hr, footer, header");
 elements.forEach((el) => {
     el.addEventListener("mouseover", (e) => {
-        var _a, _b, _c;
+        var _a, _b, _c, _d, _e, _f;
         e.stopPropagation();
         // Don't highlight elements inside the asides or the container element
         if (el.closest("aside") || el.classList.contains("container"))
@@ -33,9 +33,13 @@ elements.forEach((el) => {
             elementText.textContent = el.textContent
                 ? el.textContent.length.toString()
                 : "0";
+        const grandParentNode = document.querySelector("#element-grandparent");
+        if (grandParentNode)
+            grandParentNode.textContent =
+                (_c = (_b = (_a = el.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.tagName) !== null && _c !== void 0 ? _c : "";
         const parentNode = document.querySelector("#element-parent");
         if (parentNode)
-            parentNode.textContent = (_b = (_a = el.parentElement) === null || _a === void 0 ? void 0 : _a.tagName) !== null && _b !== void 0 ? _b : "";
+            parentNode.textContent = (_e = (_d = el.parentElement) === null || _d === void 0 ? void 0 : _d.tagName) !== null && _e !== void 0 ? _e : "";
         const childNodes = document.querySelector("#element-children");
         if (childNodes) {
             childNodes.innerHTML = "";
@@ -49,7 +53,7 @@ elements.forEach((el) => {
         const siblingNodes = document.querySelector("#element-siblings");
         if (siblingNodes) {
             siblingNodes.innerHTML = "";
-            const siblings = (_c = el.parentElement) === null || _c === void 0 ? void 0 : _c.children;
+            const siblings = (_f = el.parentElement) === null || _f === void 0 ? void 0 : _f.children;
             if (siblings) {
                 // Excludes the current element from the sibling list
                 const filteredSiblings = Array.from(siblings).filter((sibling) => sibling !== el);

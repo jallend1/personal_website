@@ -39,6 +39,12 @@ elements.forEach((el: HTMLElement) => {
       elementText.textContent = el.textContent
         ? el.textContent.length.toString()
         : "0";
+    const grandParentNode: HTMLElement | null = document.querySelector(
+      "#element-grandparent"
+    );
+    if (grandParentNode)
+      grandParentNode.textContent =
+        el.parentElement?.parentElement?.tagName ?? "";
     const parentNode: HTMLElement | null =
       document.querySelector("#element-parent");
     if (parentNode) parentNode.textContent = el.parentElement?.tagName ?? "";
