@@ -50,11 +50,16 @@ elements.forEach((el) => {
                 childNodes.appendChild(noChildren);
             }
             else {
-                for (let i = 0; i < filteredChildren.length; i++) {
-                    const child = filteredChildren[i];
-                    const childEl = document.createElement("li");
-                    childEl.textContent = `${child.nodeName}`;
-                    childNodes.appendChild(childEl);
+                const childrenCount = filteredChildren.reduce((acc, child) => {
+                    acc[child.nodeName] = acc[child.nodeName]
+                        ? acc[child.nodeName] + 1
+                        : 1;
+                    return acc;
+                }, {});
+                for (let key in childrenCount) {
+                    const childCountEl = document.createElement("li");
+                    childCountEl.textContent = `${key}: ${childrenCount[key]}`;
+                    childNodes.appendChild(childCountEl);
                 }
             }
         }
