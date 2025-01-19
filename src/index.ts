@@ -2,6 +2,24 @@ const elements: NodeListOf<HTMLElement> = document.querySelectorAll(
   "section, img, a, p, h1, h2, h3, h4, code, div, span, ul, li, hr, footer, header"
 );
 
+const elementIds = [
+  "element-name",
+  "element-attributes",
+  "element-dimensions",
+  "element-text",
+  "element-grandparent",
+  "element-parent",
+  "element-children",
+  "element-siblings",
+];
+
+const resetElements = () => {
+  elementIds.forEach((id) => {
+    const element = document.querySelector(`#${id}`);
+    if (element) element.textContent = "";
+  });
+};
+
 elements.forEach((el: HTMLElement) => {
   el.addEventListener("mouseover", (e) => {
     e.stopPropagation();
@@ -25,6 +43,7 @@ elements.forEach((el: HTMLElement) => {
         elementAttributes.appendChild(attrEl);
       }
       console.log(el);
+      console.dir(el);
     }
     const elementDimensions: HTMLElement | null = document.querySelector(
       "#element-dimensions"
@@ -110,8 +129,9 @@ elements.forEach((el: HTMLElement) => {
   el.addEventListener("mouseout", () => {
     el.classList.remove("active-element");
     // TODO: Refactor to use a single function to clear all elements
-    const elementName: HTMLElement | null =
-      document.querySelector("#element-name");
-    if (elementName) elementName.textContent = "";
+    // const elementName: HTMLElement | null =
+    //   document.querySelector("#element-name");
+    // if (elementName) elementName.textContent = "";
+    resetElements();
   });
 });
