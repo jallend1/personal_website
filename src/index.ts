@@ -31,7 +31,9 @@ elements.forEach((el: HTMLElement) => {
     );
     if (elementDimensions) {
       const { width, height } = el.getBoundingClientRect();
-      elementDimensions.textContent = `width: ${width}px, height: ${height}px`;
+      elementDimensions.textContent = `width: ${Math.floor(
+        width
+      )}px, height: ${Math.floor(height)}px`;
     }
     const elementText: HTMLElement | null =
       document.querySelector("#element-text");
@@ -50,13 +52,23 @@ elements.forEach((el: HTMLElement) => {
     if (parentNode) parentNode.textContent = el.parentElement?.tagName ?? "";
     const childNodes: HTMLElement | null =
       document.querySelector("#element-children");
+
     if (childNodes) {
       childNodes.innerHTML = "";
-      for (let i = 0; i < el.childNodes.length; i++) {
-        const child = el.childNodes[i];
-        const childEl = document.createElement("li");
-        childEl.textContent = `${child.nodeName}`;
-        childNodes.appendChild(childEl);
+      const filteredChildren = Array.from(el.childNodes).filter(
+        (child) => child.nodeName !== "#text"
+      );
+      if (filteredChildren.length === 0) {
+        const noChildren = document.createElement("li");
+        noChildren.textContent = "None";
+        childNodes.appendChild(noChildren);
+      } else {
+        for (let i = 0; i < filteredChildren.length; i++) {
+          const child = filteredChildren[i];
+          const childEl = document.createElement("li");
+          childEl.textContent = `${child.nodeName}`;
+          childNodes.appendChild(childEl);
+        }
       }
     }
     const siblingNodes: HTMLElement | null =
@@ -66,9 +78,9 @@ elements.forEach((el: HTMLElement) => {
       const siblings = el.parentElement?.children;
       if (siblings) {
         // Excludes the current element from the sibling list
-        const filteredSiblings = Array.from(siblings).filter(
-          (sibling) => sibling !== el
-        );
+        const filteredSiblings = Array.from(siblings)
+          .filter((sibling) => sibling !== el)
+          .filter((sibling) => sibling.nodeName !== "#text");
         for (let i = 0; i < filteredSiblings.length; i++) {
           const sibling = filteredSiblings[i];
           const siblingEl = document.createElement("li");
