@@ -63,15 +63,21 @@ elements.forEach((el) => {
             siblingNodes.innerHTML = "";
             const siblings = (_f = el.parentElement) === null || _f === void 0 ? void 0 : _f.children;
             if (siblings) {
-                // Excludes the current element from the sibling list
+                // Excludes the current element and #text from the sibling list
                 const filteredSiblings = Array.from(siblings)
                     .filter((sibling) => sibling !== el)
                     .filter((sibling) => sibling.nodeName !== "#text");
-                for (let i = 0; i < filteredSiblings.length; i++) {
-                    const sibling = filteredSiblings[i];
-                    const siblingEl = document.createElement("li");
-                    siblingEl.textContent = `${sibling.nodeName}`;
-                    siblingNodes.appendChild(siblingEl);
+                // Compiles count of each sibling type
+                const siblingCount = filteredSiblings.reduce((acc, sibling) => {
+                    acc[sibling.nodeName] = acc[sibling.nodeName]
+                        ? acc[sibling.nodeName] + 1
+                        : 1;
+                    return acc;
+                }, {});
+                for (let key in siblingCount) {
+                    const siblingCountEl = document.createElement("li");
+                    siblingCountEl.textContent = `${key}: ${siblingCount[key]}`;
+                    siblingNodes.appendChild(siblingCountEl);
                 }
             }
         }

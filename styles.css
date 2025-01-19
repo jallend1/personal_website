@@ -51,6 +51,10 @@ ul {
   line-height: 1.6;
 }
 
+.emphasize-text {
+  font-weight: bold;
+}
+
 #languages {
   display: flex;
   justify-content: center;
