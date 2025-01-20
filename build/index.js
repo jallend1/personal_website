@@ -87,7 +87,7 @@ const populateSiblingNodes = (id, siblings) => {
 };
 const updateElements = (el) => {
     var _a, _b, _c, _d, _e, _f, _g;
-    el.classList.add("active-element");
+    el.classList.add("border-overlay");
     setTextContent("element-name", el.tagName);
     setTextContent("element-grandparent", (_c = (_b = (_a = el.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.tagName) !== null && _c !== void 0 ? _c : "");
     setTextContent("element-parent", (_e = (_d = el.parentElement) === null || _d === void 0 ? void 0 : _d.tagName) !== null && _e !== void 0 ? _e : "");
@@ -109,7 +109,7 @@ const addEventListeners = () => {
             updateElements(el);
         });
         el.addEventListener("mouseout", () => {
-            el.classList.remove("active-element");
+            el.classList.remove("border-overlay");
             resetElements();
         });
     });

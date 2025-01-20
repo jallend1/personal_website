@@ -3,6 +3,7 @@ body {
   background-color: #f0f0f0;
   padding: 1rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .container {
@@ -80,18 +81,26 @@ ul {
   }
 }
 
-.active-element {
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  padding: 0.15rem;
-  border: 1px dashed #000;
-  /* box-shadow: #000 10px 10px 15px; */
-}
-
 .attr-name {
   font-weight: bold;
 }
 
 .attr-value {
   font-style: italic;
+}
+
+.border-overlay {
+  position: relative;
+}
+
+.border-overlay::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0px;
+  right: 0px;
+  bottom: -5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  pointer-events: none;
 }

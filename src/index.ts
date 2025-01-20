@@ -95,8 +95,7 @@ const populateSiblingNodes = (id: string, siblings: HTMLCollection | null) => {
 };
 
 const updateElements = (el: HTMLElement) => {
-  el.classList.add("active-element");
-
+  el.classList.add("border-overlay");
   setTextContent("element-name", el.tagName);
   setTextContent(
     "element-grandparent",
@@ -131,7 +130,7 @@ const addEventListeners = () => {
       updateElements(el);
     });
     el.addEventListener("mouseout", () => {
-      el.classList.remove("active-element");
+      el.classList.remove("border-overlay");
       resetElements();
     });
   });
