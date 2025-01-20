@@ -16,6 +16,17 @@ const resetElements = () => {
             element.textContent = "";
     });
 };
+const tooltip = document.getElementById("tooltip");
+const showTooltip = (el, event) => {
+    tooltip.textContent = el.tagName;
+    const rect = el.getBoundingClientRect();
+    tooltip.style.left = `${rect.left + window.scrollX}px`;
+    tooltip.style.top = `${rect.top + window.scrollY - 30}px`;
+    tooltip.style.opacity = "1";
+};
+const hideTooltip = () => {
+    tooltip.style.opacity = "0";
+};
 const setTextContent = (id, text) => {
     const element = document.querySelector(`#${id}`);
     if (element)
@@ -107,10 +118,12 @@ const addEventListeners = () => {
             if (el.closest("aside") || el.classList.contains("container"))
                 return;
             updateElements(el);
+            showTooltip(el, e);
         });
         el.addEventListener("mouseout", () => {
             el.classList.remove("border-overlay");
             resetElements();
+            hideTooltip();
         });
     });
 };
