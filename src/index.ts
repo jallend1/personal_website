@@ -17,7 +17,7 @@ const resetElements = () => {
 
 const tooltip = document.getElementById("tooltip") as HTMLElement;
 
-const showTooltip = (el: HTMLElement, event: MouseEvent) => {
+const showTooltip = (el: HTMLElement, event: MouseEvent | TouchEvent) => {
   tooltip.textContent = el.tagName;
   const rect = el.getBoundingClientRect();
   tooltip.style.left = `${rect.left + window.scrollX}px`;
@@ -144,7 +144,20 @@ const addEventListeners = () => {
       updateElements(el);
       showTooltip(el, e);
     });
+    // Add touch event listener for mobile devices
+    el.addEventListener("touchstart", (e) => {
+      e.stopPropagation();
+      // Don't highlight elements inside the asides or the container element
+      if (el.closest("aside") || el.classList.contains("container")) return;
+      updateElements(el);
+      showTooltip(el, e);
+    });
     el.addEventListener("mouseout", () => {
+      el.classList.remove("border-overlay");
+      resetElements();
+      hideTooltip();
+    });
+    el.addEventListener("touchend", () => {
       el.classList.remove("border-overlay");
       resetElements();
       hideTooltip();
