@@ -17,6 +17,7 @@ body {
   position: sticky;
   top: 10px;
   height: fit-content;
+  margin: 0 1rem;
 }
 
 main {
@@ -45,6 +46,10 @@ a {
 ul {
   list-style-type: none;
   padding: 0;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
 }
 
 #about {
@@ -112,6 +117,8 @@ ul {
 
 .tooltip {
   position: absolute;
+  display: flex;
+  justify-content: space-between;
 
   background-color: #333;
   color: #fff;

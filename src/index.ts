@@ -18,11 +18,18 @@ const resetElements = () => {
 const tooltip = document.getElementById("tooltip") as HTMLElement;
 
 const showTooltip = (el: HTMLElement, event: MouseEvent | TouchEvent) => {
-  tooltip.textContent = el.tagName;
+  // tooltip.textContent = el.tagName;
+  tooltip.innerHTML = `
+    <span class="tooltip-tag">${el.tagName}</span>
+    <span class="tooltip-dimensions">${Math.floor(
+      el.getBoundingClientRect().width
+    )}x${Math.floor(el.getBoundingClientRect().height)}</span>
+    `;
   const rect = el.getBoundingClientRect();
   tooltip.style.left = `${rect.left + window.scrollX}px`;
   tooltip.style.top = `${rect.top + window.scrollY - 30}px`;
-  tooltip.style.opacity = "1";
+  tooltip.style.minWidth = `${rect.width}px`;
+  tooltip.style.opacity = "0.9";
 };
 
 const hideTooltip = () => {
