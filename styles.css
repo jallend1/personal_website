@@ -137,3 +137,7 @@ ul {
     display: none;
   }
 }
+
+@media (prefers-reduced-motion) {
+  /* Modify GIFs */
+}
