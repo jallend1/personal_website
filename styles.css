@@ -162,6 +162,10 @@ ul {
   transition: opacity 0.2s;
 }
 
+.tooltip-tag {
+  margin-right: 4px;
+}
+
 /* If screen is less than 1200px, do not display left-column or right-column */
 @media (max-width: 1200px) {
   .left-column,
