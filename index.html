@@ -9,10 +9,27 @@
 
   <body>
     <header>
-      <img src="images/line.gif" alt="A line" />
+      <picture>
+        <source
+          srcset="images/line.gif"
+          type="image/gif"
+          alt="A line"
+          media="(prefers-reduced-motion: no-preference)"
+        />
+        <img src="images/stills/line.png" alt="A line" />
+      </picture>
+
       <h1>Welcome to JasonDAllen.dev</h1>
       <p class="subtitle">Jason's home on the Internet</p>
-      <img src="images/line.gif" alt="A line" />
+      <picture>
+        <source
+          srcset="images/line.gif"
+          type="image/gif"
+          alt="A line"
+          media="(prefers-reduced-motion: no-preference)"
+        />
+        <img src="images/stills/line.png" alt="A line" />
+      </picture>
     </header>
     <div class="container">
       <aside class="left-column">
@@ -42,42 +59,83 @@
         <section id="contact">
           <header>
             <h2>
-              <img
-                src="images/trekdelta.gif"
-                alt="Star Trek Delta"
-                class="icon"
-              />
+              <picture>
+                <source
+                  srcset="images/trekdelta.gif"
+                  type="image/gif"
+                  class="icon"
+                  media="(prefers-reduced-motion: no-preference)"
+                />
+                <img
+                  src="images/stills/trekdelta.png"
+                  alt="Star Trek Delta"
+                  class="icon"
+                />
+              </picture>
+
               Contact Me
-              <img
-                src="images/trekdelta.gif"
-                alt="Star Trek Delta"
-                class="icon"
-              />
+              <picture>
+                <source
+                  srcset="images/trekdelta.gif"
+                  type="image/gif"
+                  class="icon"
+                  media="(prefers-reduced-motion: no-preference)"
+                />
+                <img
+                  src="images/stills/trekdelta.png"
+                  alt="Star Trek Delta"
+                  class="icon"
+                />
+              </picture>
             </h2>
           </header>
           <div id="contact-links">
             <div id="email">
-              <img
-                src="images/contact/email.gif"
-                alt="Email icon"
-                class="icon"
-              />
+              <picture>
+                <source
+                  srcset="images/contact/email.gif"
+                  type="image/gif"
+                  media="(prefers-reduced-motion: no-preference)"
+                  class="icon"
+                />
+                <img
+                  src="images/stills/email.png"
+                  alt="Email icon"
+                  class="icon"
+                />
+              </picture>
               <a href="mailto:jallend1@gmail.com">Email</a>
             </div>
             <div id="linkedin">
-              <img
-                src="images/contact/handshake.gif"
-                alt="Handshake animated gif"
-                class="icon"
-              />
+              <picture>
+                <source
+                  srcset="images/contact/handshake.gif"
+                  type="image/gif"
+                  media="(prefers-reduced-motion: no-preference)"
+                  class="icon"
+                />
+                <img
+                  src="images/stills/handshake.png"
+                  alt="Handshake icon"
+                  class="icon"
+                />
+              </picture>
               <a href="https://www.linkedin.com/in/jallend1/">LinkedIn</a>
             </div>
             <div id="github">
-              <img
-                src="images/contact/smiley-pc.gif"
-                alt="Happy Computer animated gif"
-                class="icon"
-              />
+              <picture>
+                <source
+                  srcset="images/contact/smiley-pc.gif"
+                  type="image/gif"
+                  media="(prefers-reduced-motion: no-preference)"
+                  class="icon"
+                />
+                <img
+                  src="images/stills/smiley-pc.png"
+                  alt="Smiley face icon"
+                  class="icon"
+                />
+              </picture>
               <a href="https://www.github.com/jallend1/">GitHub</a>
             </div>
           </div>
@@ -228,7 +286,15 @@
       <p>&copy; 2025 Jason D. Allen</p>
       <div id="browser-logos">
         <img src="images/netscape.gif" alt="Netscape Navigator logo" />
-        <img src="images/ie.gif" alt="Internet Explorer logo" />
+        <picture>
+          <source
+            srcset="images/ie.gif"
+            type="image/gif"
+            media="(prefers-reduced-motion: no-preference)"
+            alt="Internet Explorer Logo"
+          />
+          <img src="images/stills/ie.png" alt="Internet Explorer logo" />
+        </picture>
       </div>
     </footer>
     <div id="tooltip" class="tooltip"></div>
