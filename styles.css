@@ -4,7 +4,7 @@ body {
   padding: 1rem;
   text-align: center;
   box-sizing: border-box;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("./images/leaves-green.png");
   background-repeat: repeat;
   color: white;
@@ -36,7 +36,6 @@ main {
 }
 
 h1 {
-  /* color: #333; */
   font-size: 2.4rem;
 }
 
@@ -85,18 +84,29 @@ ul {
   img {
     height: 50px;
   }
+
+  .light {
+    filter: brightness(2);
+    border-radius: 7px;
+  }
 }
 
 #contact-links {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: end;
   gap: 1rem;
 
   div {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
     gap: 0.5rem;
+
+    img {
+      max-width: 100%;
+    }
   }
 }
 
@@ -144,6 +154,32 @@ ul {
   .left-column,
   .right-column {
     display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    font-size: 0.8rem;
+  }
+
+  header {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  #contact-links {
+    .icon {
+      max-width: 80%;
+    }
   }
 }
 
