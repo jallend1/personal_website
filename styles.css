@@ -219,3 +219,9 @@ ul {
     transform: translateX(-100%);
   }
 }
+
+@media (prefers-reduced-motion) {
+  .marquee {
+    animation: none;
+  }
+}
