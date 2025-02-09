@@ -200,11 +200,15 @@ ul {
   }
 }
 
-.marquee {
+.marquee-container {
   overflow: hidden;
   white-space: nowrap;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.marquee {
   animation: marquee 10s linear infinite;
-  width: 100vw;
 }
 
 @keyframes marquee {
