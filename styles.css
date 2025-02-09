@@ -4,7 +4,7 @@ body {
   padding: 1rem;
   text-align: center;
   box-sizing: border-box;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("./images/leaves-green.png");
   background-repeat: repeat;
   color: white;
@@ -22,7 +22,7 @@ body {
   top: 10px;
   height: fit-content;
   margin: 0 1rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("./images/leaves-blue.png");
   background-repeat: repeat;
   height: 100vh;
@@ -35,7 +35,7 @@ main {
   max-width: 800px;
   margin: 0 auto;
   overflow: auto;
-  background-color: #efefef;
+  background-color: #d9f1ee;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
