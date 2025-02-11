@@ -18,7 +18,6 @@ const resetElements = () => {
 };
 const tooltip = document.getElementById("tooltip");
 const showTooltip = (el, event) => {
-    // tooltip.textContent = el.tagName;
     tooltip.innerHTML = `
     <span class="tooltip-tag">${el.tagName}</span>
     <span class="tooltip-dimensions">${Math.floor(el.getBoundingClientRect().width)}x${Math.floor(el.getBoundingClientRect().height)}</span>
@@ -32,9 +31,14 @@ const showTooltip = (el, event) => {
 const hideTooltip = () => {
     tooltip.style.opacity = "0";
 };
-const setTextContent = (id, text) => {
+const setTextContent = (id, text, isCode) => {
     const element = document.querySelector(`#${id}`);
-    if (element)
+    if (isCode) {
+        let innerHTML = `<code>${text}</code>`;
+        if (element)
+            element.innerHTML = innerHTML;
+    }
+    else if (element)
         element.textContent = text;
 };
 const populateAttributesList = (id, attributes) => {
@@ -76,7 +80,7 @@ const populateChildNodes = (id, children) => {
             }, {});
             for (let key in childrenCount) {
                 const childCountEl = document.createElement("li");
-                childCountEl.textContent = `${key}: ${childrenCount[key]}`;
+                childCountEl.innerHTML = `<code>${key}</code> - ${childrenCount[key]}`;
                 element.appendChild(childCountEl);
             }
         }
@@ -103,7 +107,7 @@ const populateSiblingNodes = (id, siblings) => {
             }, {});
             for (let key in siblingCount) {
                 const siblingCountEl = document.createElement("li");
-                siblingCountEl.textContent = `${key}: ${siblingCount[key]}`;
+                siblingCountEl.innerHTML = `<code>${key}</code> - ${siblingCount[key]}`;
                 element.appendChild(siblingCountEl);
             }
         }
@@ -112,12 +116,12 @@ const populateSiblingNodes = (id, siblings) => {
 const updateElements = (el) => {
     var _a, _b, _c, _d, _e, _f, _g;
     el.classList.add("border-overlay");
-    setTextContent("element-name", el.tagName);
-    setTextContent("element-grandparent", (_c = (_b = (_a = el.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.tagName) !== null && _c !== void 0 ? _c : "");
-    setTextContent("element-parent", (_e = (_d = el.parentElement) === null || _d === void 0 ? void 0 : _d.tagName) !== null && _e !== void 0 ? _e : "");
-    setTextContent("element-text", el.textContent ? el.textContent.length.toString() : "0");
+    setTextContent("element-name", el.tagName, true);
+    setTextContent("element-grandparent", (_c = (_b = (_a = el.parentElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.tagName) !== null && _c !== void 0 ? _c : "", true);
+    setTextContent("element-parent", (_e = (_d = el.parentElement) === null || _d === void 0 ? void 0 : _d.tagName) !== null && _e !== void 0 ? _e : "", true);
+    setTextContent("element-text", el.textContent ? el.textContent.length.toString() : "0", false);
     const { width, height } = el.getBoundingClientRect();
-    setTextContent("element-dimensions", `width: ${Math.floor(width)}px, height: ${Math.floor(height)}px`);
+    setTextContent("element-dimensions", `width: ${Math.floor(width)}px, height: ${Math.floor(height)}px`, false);
     populateAttributesList("element-attributes", el.attributes);
     populateChildNodes("element-children", el.childNodes);
     populateSiblingNodes("element-siblings", (_g = (_f = el.parentElement) === null || _f === void 0 ? void 0 : _f.children) !== null && _g !== void 0 ? _g : null);
