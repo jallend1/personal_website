@@ -29,6 +29,19 @@ body {
   color: white;
   border-radius: 5px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+
+  h2 {
+    font-size: 1.5vw;
+  }
+
+  h3 {
+    font-size: 1vw;
+  }
+
+  h4 {
+    font-size: 0.8vw;
+  }
 }
 
 main {

@@ -48,7 +48,13 @@ const populateAttributesList = (id: string, attributes: NamedNodeMap) => {
     for (let i = 0; i < attributes.length; i++) {
       const attr = attributes[i];
       const attrEl = document.createElement("li");
-      attrEl.innerHTML = `<span class="attr-name">${attr.name}</span>: <span class="attr-value">${attr.value}</span>`;
+      // For the class attribute, remove the border-overlay class from the list
+      if (attr.name === "class") {
+        let classList = attr.value.replace("border-overlay", "");
+        if (classList.length === 0) return;
+        attrEl.innerHTML = `<span class="attr-name">${attr.name}</span>: <span class="attr-value">${classList}</span>`;
+      } else
+        attrEl.innerHTML = `<span class="attr-name">${attr.name}</span>: <span class="attr-value">${attr.value}</span>`;
       element.appendChild(attrEl);
     }
   }
