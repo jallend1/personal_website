@@ -8,6 +8,10 @@ body {
     url("./images/leaves-green.png");
   background-repeat: repeat;
   color: white;
+
+  header {
+    margin-bottom: 1rem;
+  }
 }
 
 .container {
