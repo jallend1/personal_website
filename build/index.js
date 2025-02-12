@@ -34,6 +34,7 @@ const hideTooltip = () => {
 const setTextContent = (id, text, isCode) => {
     const element = document.querySelector(`#${id}`);
     if (isCode) {
+        // Applies code formatting to the text if specified
         let innerHTML = `<code>${text}</code>`;
         if (element)
             element.innerHTML = innerHTML;
@@ -113,6 +114,12 @@ const populateSiblingNodes = (id, siblings) => {
         }
     }
 };
+const displayDimensions = (dimension, measurement) => {
+    const elementDimensions = document.getElementById("element-dimensions");
+    const el = document.createElement("li");
+    el.innerHTML = `${dimension}: ${Math.floor(measurement)}px`;
+    elementDimensions === null || elementDimensions === void 0 ? void 0 : elementDimensions.appendChild(el);
+};
 const updateElements = (el) => {
     var _a, _b, _c, _d, _e, _f, _g;
     el.classList.add("border-overlay");
@@ -121,7 +128,8 @@ const updateElements = (el) => {
     setTextContent("element-parent", (_e = (_d = el.parentElement) === null || _d === void 0 ? void 0 : _d.tagName) !== null && _e !== void 0 ? _e : "", true);
     setTextContent("element-text", el.textContent ? el.textContent.length.toString() : "0", false);
     const { width, height } = el.getBoundingClientRect();
-    setTextContent("element-dimensions", `width: ${Math.floor(width)}px, height: ${Math.floor(height)}px`, false);
+    displayDimensions("width", width);
+    displayDimensions("height", height);
     populateAttributesList("element-attributes", el.attributes);
     populateChildNodes("element-children", el.childNodes);
     populateSiblingNodes("element-siblings", (_g = (_f = el.parentElement) === null || _f === void 0 ? void 0 : _f.children) !== null && _g !== void 0 ? _g : null);

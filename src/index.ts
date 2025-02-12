@@ -38,6 +38,7 @@ const hideTooltip = () => {
 const setTextContent = (id: string, text: string, isCode: boolean) => {
   const element: HTMLElement | null = document.querySelector(`#${id}`);
   if (isCode) {
+    // Applies code formatting to the text if specified
     let innerHTML = `<code>${text}</code>`;
     if (element) element.innerHTML = innerHTML;
   } else if (element) element.textContent = text;
@@ -123,6 +124,13 @@ const populateSiblingNodes = (id: string, siblings: HTMLCollection | null) => {
   }
 };
 
+const displayDimensions = (dimension: string, measurement: number) => {
+  const elementDimensions = document.getElementById("element-dimensions");
+  const el = document.createElement("li");
+  el.innerHTML = `${dimension}: ${Math.floor(measurement)}px`;
+  elementDimensions?.appendChild(el);
+};
+
 const updateElements = (el: HTMLElement) => {
   el.classList.add("border-overlay");
   setTextContent("element-name", el.tagName, true);
@@ -138,11 +146,9 @@ const updateElements = (el: HTMLElement) => {
     false
   );
   const { width, height } = el.getBoundingClientRect();
-  setTextContent(
-    "element-dimensions",
-    `width: ${Math.floor(width)}px, height: ${Math.floor(height)}px`,
-    false
-  );
+  displayDimensions("width", width);
+  displayDimensions("height", height);
+
   populateAttributesList("element-attributes", el.attributes);
 
   populateChildNodes("element-children", el.childNodes);
