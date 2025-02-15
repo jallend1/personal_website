@@ -54,7 +54,7 @@
           <code id="element-name"></code>
         </p>
         <h2>Attributes</h2>
-        <ul id="element-attributes">
+        <menu id="element-attributes">
           <li>
             <code>id</code>
           </li>
@@ -67,7 +67,7 @@
           <li>
             <code>alt</code>
           </li>
-        </ul>
+        </menu>
       </aside>
       <main class="center-column">
         <section id="about">
@@ -147,7 +147,7 @@
               <pre>
                 <code>
                   &lt;picture&gt;
-                    &lt;source srcset=&quot;images/line.gif&quot; type=&quot;image/gif&quot;alt=&quot;A line&quot;
+                    &lt;source srcset=&quot;images/line.gif&quot; alt=&quot;A line&quot;
                       media=&quot;(prefers-reduced-motion: no-preference)&quot;/&gt;
                     &lt;img src=&quot;images/stills/line.png&quot; alt=&quot;A line&quot; /&gt;
                   &lt;/picture&gt;
@@ -171,35 +171,19 @@
                   .marquee-container {
                     overflow: hidden;
                     white-space: nowrap;
-                    width: 50%;
-                    margin: 0 auto;
-                    background-color: black;
-                    border: 2px solid #333;
-                    border-radius: 10px;
                   }
                   
                   .marquee {
-                    display: inline-block;
                     animation: marquee 10s linear infinite;
-                    color: #00ff00;
-                    font-family: "Courier New", Courier, monospace;
-                    text-transform: uppercase;
-                    font-size: 0.75rem;
                   }
                   
                   @keyframes marquee {
-                    0% {
-                      transform: translateX(200%);
-                    }
-                    100% {
-                      transform: translateX(-200%);
-                    }
+                    0% { transform: translateX(200%); }
+                    100% { transform: translateX(-200%); }
                   }
                   
                   @media (prefers-reduced-motion) {
-                    .marquee {
-                      animation: none;
-                    }
+                    .marquee { animation: none; }
                   }
                 </code>
               </pre>
@@ -311,7 +295,7 @@
           <header>
             <h2>Technologies I Adore Right Now</h2>
           </header>
-          <ul id="languages">
+          <menu id="languages">
             <li>
               <img
                 src="images/languages/javascript.png"
@@ -358,7 +342,7 @@
                 class="light"
               />
             </li>
-          </ul>
+          </menu>
         </section>
         <hr />
       </main>
@@ -369,23 +353,23 @@
         <div id="element-details">
           <div>
             <h4>Dimensions</h4>
-            <ul id="element-dimensions"></ul>
+            <menu id="element-dimensions"></menu>
           </div>
           <div id="grandparent">
             <h4>Grandparent</h4>
-            <ul id="element-grandparent"></ul>
+            <menu id="element-grandparent"></menu>
           </div>
           <div>
             <h4>Parent</h4>
-            <ul id="element-parent"></ul>
+            <menu id="element-parent"></menu>
           </div>
           <div>
             <h4>Children</h4>
-            <ul id="element-children"></ul>
+            <menu id="element-children"></menu>
           </div>
           <div>
             <h4>Siblings</h4>
-            <ul id="element-siblings"></ul>
+            <menu id="element-siblings"></menu>
           </div>
           <div>
             <h4>Text Content Length</h4>
@@ -396,7 +380,7 @@
     </div>
 
     <footer>
-      <p>&copy; 2025 Jason D. Allen</p>
+      <p><small>&copy; 2025 Jason D. Allen</small></p>
       <div id="browser-logos">
         <img src="images/netscape.gif" alt="Netscape Navigator logo" />
         <picture>

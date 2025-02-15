@@ -89,7 +89,7 @@ a {
   color: #010101;
 }
 
-ul {
+menu {
   list-style-type: none;
   padding: 0;
 
@@ -117,6 +117,23 @@ ul {
 
 .emphasize-text {
   font-weight: bold;
+}
+
+.emphasis {
+  font-style: italic;
+}
+
+.code-block {
+  background-color: #1b1b1b;
+  color: #00ff00;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  text-align: left;
+
+  code {
+    line-height: 1.15rem;
+  }
 }
 
 #languages {
@@ -252,10 +269,10 @@ ul {
 
 @keyframes marquee {
   0% {
-    transform: translateX(200%);
+    transform: translateX(250%);
   }
   100% {
-    transform: translateX(-200%);
+    transform: translateX(-250%);
   }
 }
 
