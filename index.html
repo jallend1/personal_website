@@ -79,38 +79,136 @@
               class="feature-image"
             />
           </header>
+          <h3>Websites used to be good!</h3>
           <p class="body-text emphasize-text">
-            Websites used to be good, but I think they are all very bad now!
+            But I think they are all very bad now!
           </p>
           <p class="body-text">
-            The internet used to feel small and personal. There was less polish,
-            and the bones of every website were almost painfully visible.
-            <!-- TODO: Have bones mode turned off initially -->
-            (Engage full bones mode!) There's a charm to that, I think. It
-            seemed more human. Like every person was given the same box of LEGOs
-            and they arranged those shared blocks in different ways that
-            communicated something about them.
-          </p>
-          <p class="body-text emphasize-text">
-            Rather than try to hide my LEGO bricks, I wanted to emphasize them.
+            The internet used to feel...personal. We used to make web pages for
+            ourselves, for our friends, or communities we were active in. Today,
+            it feels more like it was designed primarily with the search
+            algorithms in mind.
           </p>
           <p class="body-text">
-            The guiding principle of the modern web is a focus on what the
-            algorithm demands, not what either the creator or the visitors want.
-            And the demands of the algorithm have created a sameness across the
-            web. Creating websites that appeal to the broadest possible audience
-            makes sense in a lot of instances.
+            While that is an entirely valid way to exist online, I don't think
+            it's the <span class="emphasis">only</span> way. And I think a lot
+            of the charm of the early web has been lost to a modern sense of
+            uniformity reinforced by what finds success in search results.
           </p>
           <p class="body-text">
-            But I wanted to make a website that pointedly ignores the
-            algorithimic demands, and instead harkens back to an era before the
-            algorithm defined the way we present to the world. An era when the
-            web felt more intimate. And maybe part of that intimacy comes from
-            how evident the bones of the website once were. The modern polished
-            web looks sharp and is algorithmically superior, but it does so by
-            obfuscating as much as possible the fact that there is a human
-            behind these pages.
+            What we want to say and how we want to present to the world is being
+            preemptively modified by what rises to the top of online searches.
+            Perpetual growth and profit maximization have become the defining
+            values of the modern web, and it has erased the equally valid and
+            generally more fun approach of just creating a little page for
+            yourself that brings you or those you care about a little joy.
           </p>
+          <h3>What brings me joy</h3>
+          <p class="body-text">
+            I like being able to look at a web page, and see the bones of it.
+            All of the relationships each element on the page has to the others
+            was so clearly evident in the early web. That the bones of the page
+            were so clear made it easier to see that there was a person behind
+            its construction. It felt more like a Battlestar Galactica or
+            Firefly situation, and less like Star Trek: The Next Generation. The
+            mechanics of the page were visible, and that made it feel more
+            human. Also, I like dinky animated GIFs.
+          </p>
+          <h3>Classic Web With Modern Tools</h3>
+          <p class="body-text">
+            The internet of 25 years ago had more charm and more personality of
+            today's web, but it was also an accessibility nightmare. A lot of
+            the same iconic features of the retro web can be recreated in ways
+            that are inclusive for all internet users.
+          </p>
+          <div class="accessibility-feature">
+            <h4>Reduced Motion</h4>
+            <p class="body-text">
+              While <span class="emphasis">I</span> love animated GIFs, I do not
+              experience any vestiublar motion disorders that could be triggered
+              by them. And a website cannot reasonably be described as "fun" or
+              "charming" if a portion of its visitors are made to feel
+              physically ill from it.
+            </p>
+            <p class="body-text">
+              Luckily, the good folks establishing CSS standards created the
+              <code
+                ><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion"
+                  >prefers-reduced-motion</a
+                ></code
+              >
+              media query for just such an occassion! If a user has set a
+              preference on their local device, this media query allows me to
+              respect that and instead show a still image in place of an
+              animated GIF.
+            </p>
+            <div class="code-block">
+              <pre>
+                <code>
+                  &lt;picture&gt;
+                    &lt;source srcset=&quot;images/line.gif&quot; type=&quot;image/gif&quot;alt=&quot;A line&quot;
+                      media=&quot;(prefers-reduced-motion: no-preference)&quot;/&gt;
+                    &lt;img src=&quot;images/stills/line.png&quot; alt=&quot;A line&quot; /&gt;
+                  &lt;/picture&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="accessibility-feature">
+            <h4>The Marquee</h4>
+            <p class="body-text">
+              Just like those delightful animated GIFs, the marquee tag would
+              have been a wildly unnecessary challenge for someone with a
+              vestibular motion disorder. But while the marquee tag is no longer
+              supported, we can recreate the effect with CSS animations all
+              while using that <code>prefers-reduced-motion</code> feature to
+              make sure we're not inflicting suffering on people wantonly.
+            </p>
+            <div class="code-block">
+              <pre>
+                <code>
+                  .marquee-container {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    width: 50%;
+                    margin: 0 auto;
+                    background-color: black;
+                    border: 2px solid #333;
+                    border-radius: 10px;
+                  }
+                  
+                  .marquee {
+                    display: inline-block;
+                    animation: marquee 10s linear infinite;
+                    color: #00ff00;
+                    font-family: "Courier New", Courier, monospace;
+                    text-transform: uppercase;
+                    font-size: 0.75rem;
+                  }
+                  
+                  @keyframes marquee {
+                    0% {
+                      transform: translateX(200%);
+                    }
+                    100% {
+                      transform: translateX(-200%);
+                    }
+                  }
+                  
+                  @media (prefers-reduced-motion) {
+                    .marquee {
+                      animation: none;
+                    }
+                  }
+                </code>
+              </pre>
+            </div>
+          </div>
+
+          <div class="accessibility-feature">
+            <h4>Semantic HTML</h4>
+          </div>
           <h3>What's the point of this?</h3>
           <p class="body-text">
             Primarily for me to have fun. The web is a delightful and magical
