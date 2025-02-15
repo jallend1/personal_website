@@ -73,7 +73,6 @@ main {
     font-size: 1.1rem;
     font-style: italic;
     text-align: left;
-    padding-left: 1rem;
   }
 }
 
@@ -129,6 +128,10 @@ menu {
 
 .emphasis {
   font-style: italic;
+}
+
+.accessibility-feature {
+  margin-left: 1rem;
 }
 
 .code-block {
