@@ -17,6 +17,8 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .left-column,
@@ -26,9 +28,7 @@ body {
   top: 10px;
   height: fit-content;
   margin: 0 1rem;
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("./images/grass-1.png"); */
-
+  max-width: 400px;
   background: rgba(75, 75, 253, 0.685);
   background-repeat: repeat;
   height: 100vh;
@@ -38,15 +38,15 @@ body {
   padding: 1rem;
 
   h2 {
-    font-size: 1.5vw;
+    font-size: clamp(1.5rem, 3vw, 2rem);
   }
 
   h3 {
-    font-size: 1vw;
+    font-size: clamp(1rem, 2vw, 1.5rem);
   }
 
   h4 {
-    font-size: 1vw;
+    font-size: clamp(1rem, 1vw, 1.5rem);
     font-weight: bold;
     font-style: italic;
     margin-bottom: 0;
