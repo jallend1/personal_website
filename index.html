@@ -12,32 +12,29 @@
         <source
           srcset="images/line.gif"
           type="image/gif"
-          alt="A line"
           media="(prefers-reduced-motion: no-preference)"
         />
-        <img src="images/stills/line.png" alt="A line" />
+        <img src="images/stills/line.png" />
       </picture>
-      <h1>Welcome to JasonDAllen.dev</h1>
+      <h1 id="main-head">Welcome to JasonDAllen.dev</h1>
       <div>
         <picture>
           <source
             srcset="images/construction.gif"
             type="image/gif"
-            alt="Under Construction"
             media="(prefers-reduced-motion: no-preference)"
           />
           <!-- TODO: Create a still of the under construction GIF -->
-          <img src="images/stills/line.png" alt="A line" />
+          <img src="images/stills/line.png" />
         </picture>
       </div>
-      <picture>
+      <picture class="header-border">
         <source
           srcset="images/line.gif"
           type="image/gif"
-          alt="A line"
           media="(prefers-reduced-motion: no-preference)"
         />
-        <img src="images/stills/line.png" alt="A line" />
+        <img src="images/stills/line.png" />
       </picture>
       <div class="marquee-container">
         <p class="marquee">Jason's home on the Internet</p>
@@ -102,7 +99,7 @@
             yourself that brings you or those you care about a little joy.
           </p>
         </section>
-        <section>
+        <section id="joy">
           <h3>What brings me joy</h3>
           <p class="body-text">
             I like being able to look at a web page and see the bones of it. All
@@ -134,7 +131,7 @@
             page.
           </p>
         </section>
-        <section>
+        <section id="accessibility">
           <h3>Classic Web With Modern Tools</h3>
           <p class="body-text">
             The internet of 25 years ago had more charm and more personality of
@@ -168,8 +165,8 @@
               <pre>
                 <code>
 &lt;picture&gt;
-  &lt;source srcset=&quot;images/line.gif&quot; alt=&quot;A line&quot; media=&quot;(prefers-reduced-motion: no-preference)&quot;/&gt;
-  &lt;img src=&quot;images/stills/line.png&quot; alt=&quot;A line&quot; /&gt;
+  &lt;source srcset=&quot;images/line.gif&quot; media=&quot;(prefers-reduced-motion: no-preference)&quot;/&gt;
+  &lt;img src=&quot;images/stills/line.png&quot;  /&gt;
 &lt;/picture&gt;
                 </code>
               </pre>
@@ -224,7 +221,7 @@
             </p>
           </div>
         </section>
-        <section>
+        <section id="the-point">
           <h3>What's the point of this?</h3>
           <p class="body-text">
             Primarily for me to have fun. The web is a delightful and magical
@@ -272,7 +269,7 @@
             </h2>
           </header>
           <div id="contact-links">
-            <div id="email">
+            <div id="email" class="contact">
               <picture>
                 <source
                   srcset="images/contact/email.gif"
@@ -288,7 +285,7 @@
               </picture>
               <a href="mailto:jallend1@gmail.com">Email</a>
             </div>
-            <div id="linkedin">
+            <div id="linkedin" class="contact">
               <picture>
                 <source
                   srcset="images/contact/handshake.gif"
@@ -304,7 +301,7 @@
               </picture>
               <a href="https://www.linkedin.com/in/jallend1/">LinkedIn</a>
             </div>
-            <div id="github">
+            <div id="github" class="contact">
               <picture>
                 <source
                   srcset="images/contact/smiley-pc.gif"
@@ -314,7 +311,7 @@
                 />
                 <img
                   src="images/stills/smiley-pc.png"
-                  alt="Smiley face icon"
+                  alt="Smiley computer face"
                   class="icon"
                 />
               </picture>
@@ -328,46 +325,44 @@
             <h2>Technologies I Adore Right Now</h2>
           </header>
           <menu id="languages">
-            <li>
+            <li class="language">
               <img
                 src="images/languages/javascript.png"
                 alt="JavaScript Logo"
               />
             </li>
-            <li>
+            <li class="language">
               <img src="images/languages/php.png" alt="PHP Logo" />
             </li>
-
-            <li>
+            <li class="language">
               <img src="images/languages/html5.svg" alt="HTML Logo" />
             </li>
-            <li>
+            <li class="language">
               <img src="images/languages/css3.svg" alt="CSS Logo" />
             </li>
-
-            <li>
+            <li class="language">
               <img src="images/languages/react.svg" alt="React Logo" />
             </li>
-            <li>
+            <li class="language">
               <img src="images/languages/ts.svg" alt="TypeScript Logo" />
             </li>
-            <li>
+            <li class="language">
               <img src="images/languages/node.svg" alt="Node.js Logo" />
             </li>
-            <li>
+            <li class="language">
               <img src="images/languages/json.svg" alt="JSON Logo" />
             </li>
-            <li>
+            <li class="language">
               <img
                 src="images/languages/md.svg"
                 alt="Markdown Logo"
                 class="light"
               />
             </li>
-            <li>
+            <li class="language">
               <img src="images/languages/wp.svg" alt="WordPress Logo" />
             </li>
-            <li>
+            <li class="language">
               <img
                 src="images/languages/git-logo.svg"
                 alt="Git Logo"
@@ -419,7 +414,6 @@
             srcset="images/ie.gif"
             type="image/gif"
             media="(prefers-reduced-motion: no-preference)"
-            alt="Internet Explorer Logo"
           />
           <img src="images/stills/ie.png" alt="Internet Explorer logo" />
         </picture>
