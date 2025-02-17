@@ -112,7 +112,7 @@
             construction. It felt more like a Battlestar Galactica or Firefly
             situation, and less like Star Trek: The Next Generation. The
             mechanics of the page were visible, and that made it feel more
-            human. Also, I am enthusiastic about dinky animated GIFs.
+            human. Also, I am DEEPLY enthusiastic about dinky animated GIFs.
           </p>
           <p class="body-text">
             This is why on this page, not only are the building blocks
@@ -167,11 +167,10 @@
             <div class="code-block">
               <pre>
                 <code>
-                  &lt;picture&gt;
-                    &lt;source srcset=&quot;images/line.gif&quot; alt=&quot;A line&quot;
-                      media=&quot;(prefers-reduced-motion: no-preference)&quot;/&gt;
-                    &lt;img src=&quot;images/stills/line.png&quot; alt=&quot;A line&quot; /&gt;
-                  &lt;/picture&gt;
+&lt;picture&gt;
+  &lt;source srcset=&quot;images/line.gif&quot; alt=&quot;A line&quot; media=&quot;(prefers-reduced-motion: no-preference)&quot;/&gt;
+  &lt;img src=&quot;images/stills/line.png&quot; alt=&quot;A line&quot; /&gt;
+&lt;/picture&gt;
                 </code>
               </pre>
             </div>
@@ -189,23 +188,23 @@
             <div class="code-block">
               <pre>
                 <code>
-                  .marquee-container {
-                    overflow: hidden;
-                    white-space: nowrap;
-                  }
-                  
-                  .marquee {
-                    animation: marquee 10s linear infinite;
-                  }
-                  
-                  @keyframes marquee {
-                    0% { transform: translateX(200%); }
-                    100% { transform: translateX(-200%); }
-                  }
-                  
-                  @media (prefers-reduced-motion) {
-                    .marquee { animation: none; }
-                  }
+  .marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee {
+    animation: marquee 10s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(200%); }
+    100% { transform: translateX(-200%); }
+  }
+
+  @media (prefers-reduced-motion) {
+    .marquee { animation: none; }
+  }
                 </code>
               </pre>
             </div>

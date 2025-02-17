@@ -24,11 +24,11 @@ body {
 .left-column,
 .right-column {
   width: 20%;
+  max-width: 400px;
   position: sticky;
   top: 10px;
   height: fit-content;
   margin: 0 1rem;
-  max-width: 400px;
   background: rgba(75, 75, 253, 0.685);
   background-repeat: repeat;
   height: 100vh;
@@ -38,11 +38,11 @@ body {
   padding: 1rem;
 
   h2 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1rem, 3vw, 1rem);
   }
 
   h3 {
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 2vw, 1rem);
   }
 
   h4 {
@@ -134,6 +134,11 @@ menu {
   margin-left: 1rem;
 }
 
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 .code-block {
   background-color: #1b1b1b;
   color: #00ff00;
@@ -141,6 +146,7 @@ menu {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   overflow: auto;
   text-align: left;
+  width: 100%;
 
   code {
     line-height: 1.15rem;
@@ -226,7 +232,7 @@ menu {
 }
 
 /* If screen is less than 1200px, do not display left-column or right-column */
-@media (max-width: 1200px) {
+@media (max-width: 800px) {
   .left-column,
   .right-column {
     display: none;
